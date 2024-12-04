@@ -1,0 +1,16 @@
+syntax = "proto3";
+package protocol;
+option go_package = "./;protocol";
+
+message Message {
+  // 头像，from，to， content，文本内容类型，消息传输类型，消息类型（单聊群聊），url
+  string avatar = 1;
+  string fromUsername = 2;
+  string from = 3;   //user_id
+  string to = 4;
+  string content = 5;
+  int32 contentType = 6;     //1. 文字  2.普通文件 3.图片
+  string type = 7;           // 传输类型 1. 心跳检测heartbeat 2. 。。。
+  int32 msgType = 8;      // 1单聊 2 群聊
+  string url = 9;
+}
